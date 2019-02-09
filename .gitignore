@@ -5,6 +5,9 @@
 .idea
 
 # Building
-module/*/node_modules
-module/*/dist
+module/server/**/*.js
+node_modules
+dist
+
+# Misc
 *.log
