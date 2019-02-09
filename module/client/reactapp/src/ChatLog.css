@@ -2,6 +2,11 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+    margin: 15px;
+    padding: 20px;
+    border: 1px solid #bcbcbc;
 }
 
 .ChatLog .ChatMessage {

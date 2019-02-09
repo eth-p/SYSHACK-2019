@@ -36,17 +36,51 @@
 
 html, body, #root {
   height: 100%;
-  background-image: linear-gradient(teal, white, white, white, blue);
+  /*background-image: linear-gradient(teal, white, white, white, blue);*/
+  background-color: #dbe8ff;
+  font-family: "Microsoft Sans Serif", "Arial";
 }
 .App {
   display: flex;
   flex-direction: column;
-  /*align-content: center;
-  justify-content: center;*/
   height: 100%;
   width: 100%;
 }
 
+.TopBar {
+  height: 10%;
+  background: linear-gradient(to bottom, #b3dced 0%,#5fc4e2 50%,#bce0ee 100%);
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+}
+
+.AppBody {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.ChatColumn {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.UserColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+
 p {
   margin: 0;
+}
+
+input {
+  border-radius: 2px;
 }
