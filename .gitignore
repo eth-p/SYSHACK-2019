@@ -4,6 +4,7 @@
 # IDE
 .idea
 
-# Node Modules
+# Building
 module/*/node_modules
 module/*/dist
+*.log
