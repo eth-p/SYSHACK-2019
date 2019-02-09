@@ -1,0 +1,21 @@
+.BubbleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 108px;
+    width: 108px;
+    border-radius: 10px;
+
+    background: linear-gradient(to bottom, #e4f5fc 0%,#9fd8ef 38%,#2ab0ed 58%);
+    -webkit-box-shadow: 5px 8px 29px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 8px 29px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 8px 29px 0px rgba(0,0,0,0.75);
+
+    margin: 5px;
+}
+
+.BubbleContainer img {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+}
