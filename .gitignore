@@ -8,6 +8,7 @@ Thumbs.db
 
 # Building
 module/server/**/*.js
+module/server/**/*.map
 node_modules
 dist
 
