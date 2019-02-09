@@ -1,0 +1,19 @@
+.ChatLog {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.ChatLog .ChatMessage {
+    display: flex;
+    flex-direction: column;
+}
+
+.ChatLog .ChatMessage .SenderName {
+    color: grey;
+}
+
+.ChatLog .ChatMessage .Message {
+    color: black;
+    margin-left: 10px;
+}

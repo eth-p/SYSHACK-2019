@@ -1,4 +1,10 @@
 # MacOS
 .DS_Store
 
-module/client/dist
+# IDE
+.idea
+
+# Building
+module/*/node_modules
+module/*/dist
+*.log
