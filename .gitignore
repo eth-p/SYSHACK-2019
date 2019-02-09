@@ -1,3 +1,8 @@
 # MacOS
 .DS_Store
 
+# IDE
+.idea
+
+# Node Modules
+module/*/node_modules
