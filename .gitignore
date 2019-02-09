@@ -6,3 +6,4 @@
 
 # Node Modules
 module/*/node_modules
+module/*/dist
