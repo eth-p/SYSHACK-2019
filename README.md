@@ -1,4 +1,6 @@
 # SYSHACK-2019
+[![Netlify Status](https://api.netlify.com/api/v1/badges/731ae7ff-ec5d-4923-9033-e34dbbfe085e/deploy-status)](https://app.netlify.com/sites/system-hacks-2019/deploys)
+
 System Hacks 2019
 
 
