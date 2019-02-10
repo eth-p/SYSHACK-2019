@@ -42,6 +42,7 @@ class Server {
     });
 
     socket.on('chat message', (message) => {
+      console.log("RECV FROM " + user.username + " :: " + message);
       this.server.sockets.emit('chat message', {message: message, user: userPublic});
     });
 
