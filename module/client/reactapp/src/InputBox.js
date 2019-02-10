@@ -30,6 +30,7 @@ class InputBox extends Component {
 
   handleEmojiButtonClick(event) {
     console.log("here");
+    alert("You sent a nudge!");
     //this.setState({emojiMenuOpen: !emojiMenuOpen});
     this.socket.emit("chat nudge");
   }
