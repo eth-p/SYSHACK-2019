@@ -22,7 +22,9 @@ class InputBox extends Component {
   }
 
   handleEmojiButtonClick(event) {
+    console.log("here");
     //this.setState({emojiMenuOpen: !emojiMenuOpen});
+    this.socket.emit("chat nudge");
   }
 
   onMessageSend() {
