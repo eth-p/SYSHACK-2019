@@ -6,7 +6,7 @@ const http = require('http').Server(app);
 const fs = require('fs');
 const io = require('socket.io')(http);
 
-const SOCKET = 'http.sock';
+const SOCKET = '/tmp/hackathon.sock';
 // ---------------------------------------------------------------------------------------------------------------------
 
 app.get('/', function(req, res){
