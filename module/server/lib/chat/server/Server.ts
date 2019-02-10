@@ -43,6 +43,7 @@ class Server {
     this.users.set(username, user);
 
     socket.on('disconnect', () => {
+      socket.broadcast.emit('chat status', `${user.name} left the chat.`);
       this.users.delete(username);
     });
 
@@ -74,6 +75,7 @@ class Server {
     });
 
     socket.broadcast.emit('join', userPublic);
+    socket.broadcast.emit('chat status', {message: `${user.name} joined the chat.`});
     socket.emit('info', userPublic);
   }
 
