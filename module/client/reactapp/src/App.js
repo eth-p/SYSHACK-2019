@@ -6,8 +6,19 @@ import BubbleImage from "./BubbleImage";
 //import io from 'socket.io-client';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      messages: {},
+      users: {},
+      currentUser: {}
+    }
+  }
+
   componentDidMount() {
     //const socket = io("");
+    // on message received
+
   }
 
   render() {

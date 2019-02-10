@@ -7,8 +7,6 @@ class ChatLog extends Component {
     return (
       <div className="ChatLog">
         {this.props.messages
-          .slice(50)
-          .reverse()
           .map(message => <ChatMessage message={message}/>)}
       </div>
     );
