@@ -47,7 +47,7 @@ class Server {
     });
 
     socket.broadcast.emit('join', userPublic);
-    socket.send('info', userPublic);
+    socket.emit('info', userPublic);
   }
 
 }
