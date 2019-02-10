@@ -7,7 +7,7 @@ class ChatLog extends Component {
     return (
       <div className="ChatLog">
         {this.props.messages
-          .map(message => <ChatMessage message={message}/>)}
+          .map((message, index) => <ChatMessage key={index} message={message}/>)}
       </div>
     );
   }

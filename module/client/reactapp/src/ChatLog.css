@@ -7,11 +7,15 @@
     margin: 15px;
     padding: 20px;
     border: 1px solid #bcbcbc;
+    overflow-y: scroll;
+    position: relative;
 }
 
 .ChatLog .ChatMessage {
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
 }
 
 .ChatLog .ChatMessage .SenderName {
