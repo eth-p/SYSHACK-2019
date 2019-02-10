@@ -31,7 +31,7 @@ class App extends Component {
     });
 
     this.socket.on("chat nudge", () => {
-      alert("nudge");
+      this.nudge();
     });
 
     this.socket.on("chat error", message => {
@@ -43,11 +43,11 @@ class App extends Component {
       }));
     });
 
-    document.addEventListener('keypress', (e) => {
+    /*document.addEventListener('keypress', (e) => {
       if(e.key == "n") {
         this.nudge();
       }
-    });
+    });*/
 
     /*
     setInterval(() => {
