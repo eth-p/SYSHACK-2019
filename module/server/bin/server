@@ -13,6 +13,10 @@ app.get('/', function(req, res){
 	res.redirect("https://github.com/eth-p/SYSHACK-2019/");
 });
 
+app.get('/test', function(req, res){
+	res.end("You're here, yes.");
+});
+
 http.listen(SOCKET, function(){
 	fs.chmodSync(SOCKET, '777');
 	console.log('Listening.');
