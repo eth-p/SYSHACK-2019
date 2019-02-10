@@ -42,7 +42,7 @@ class Server {
     });
 
     socket.on('chat message', (message) => {
-      socket.broadcast.emit('message', {message: message, user: userPublic});
+      this.server.sockets.emit('chat message', {message: message, user: userPublic});
     });
 
     socket.broadcast.emit('join', userPublic);
