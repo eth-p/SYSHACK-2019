@@ -29,7 +29,28 @@ const RANDOM_NAMES: string[] = [
   '0xDEADBEEF',
   'stopcallingmeage7',
   'im with loser ^',
-  'we have'
+  'pokemontrainer70',
+  'frostedtips',
+  'iHeartJustinTimberlake',
+  'backstreetboys5ever',
+  'butterflyHairclip$',
+  'xxWeWereOnABreakxx',
+  'fesh_pince',
+  'n64isbest',
+  'beanie_baby',
+  'itamagotchyou',
+  'AOL_SUX',
+  'gelPenzOnly',
+  'iBoppedIt',
+  'furbyGal101',
+  'luvMeNickCannon',
+  'solitaire_during_free_time',
+  'home_alone_is_overrated',
+  'macerena1999',
+  'listenToMyMixxTape',
+  'AVClubPresident',
+  'VHSisHereToStay',
+  'c00tiecatcher'
 ];
 
 const RANDOM_IMGS: string[] = fs.readdirSync(path.resolve(__dirname, '../../../../client/reactapp/public/assets/images'));
