@@ -11,6 +11,11 @@
     position: relative;
 }
 
+.ChatLog .ChatMessage.ErrorMessage .Message {
+	color: red;
+	margin-left: 0;
+}
+
 .ChatLog .ChatMessage {
     margin-top: 5px;
     display: flex;

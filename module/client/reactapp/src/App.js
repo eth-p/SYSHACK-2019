@@ -21,7 +21,7 @@ class App extends Component {
       const username = message.user;
 
       this.setState(prevState => ({
-        messages: [...prevState.messages, {username: username, message: messageText}]
+        messages: [...prevState.messages, {username: username, message: messageText, type: 'message'}]
       }));
     });
 
@@ -39,7 +39,7 @@ class App extends Component {
       const username = message.user;
 
       this.setState(prevState => ({
-        messages: [...prevState.messages, {username: "bad person", message: messageText}]
+        messages: [...prevState.messages, {username: "bad person", message: messageText, type: 'error'}]
       }));
     });
 
