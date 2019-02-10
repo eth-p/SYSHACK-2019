@@ -52,17 +52,17 @@ class Server {
       if (fixed.length === 0) return;
 
       if (fixed.length > 1000) {
-        this.server.sockets.emit('chat error', {message: "No copypasta, please."});
+        socket.emit('chat error', {message: "No copypasta, please."});
         return;
       }
 
       if (/(?:a\/?s\/?l)/i.test(message)) {
-        this.server.sockets.emit('chat error', {message: "No. Just no."});
+        socket.emit('chat error', {message: "No. Just no."});
         return;
       }
 
       if (/<\/? *[a-z\-]+ *>/i.test(message)) {
-        this.server.sockets.emit('chat error', {message: "Nice try."});
+        socket.emit('chat error', {message: "Nice try."});
         return;
       }
 
