@@ -22,8 +22,8 @@ class App extends Component {
       const username = message.user;
 
       this.setState(prevState => ({
-        messages: [...prevState.messages, {username: username, message: messageText}],
-        lastSentUser: message.user
+        lastSentUser: message.user,
+        messages: [...prevState.messages, {username: username, message: messageText, type: 'message'}]
       }));
     });
 
@@ -41,7 +41,16 @@ class App extends Component {
       const username = message.user;
 
       this.setState(prevState => ({
-        messages: [...prevState.messages, {username: "bad person", message: messageText}]
+        messages: [...prevState.messages, {username: "bad person", message: messageText, type: 'error'}]
+      }));
+    });
+
+    this.socket.on("chat status", message => {
+      const messageText = message.message;
+      const username = message.user;
+
+      this.setState(prevState => ({
+        messages: [...prevState.messages, {username: "SERVER", message: messageText, type: 'status'}]
       }));
     });
 
