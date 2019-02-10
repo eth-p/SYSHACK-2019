@@ -25,7 +25,7 @@ class App extends Component {
     });
 
     this.socket.on("info", userData => {
-      console.log("info");
+      console.log(userData);
       this.setState({currentUser: userData});
     });
 
@@ -52,7 +52,7 @@ class App extends Component {
           </div>
           <div className="UserColumn">
             <BubbleImage src="https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"/>
-            <BubbleImage src={"../public/assets/images/" + this.state.currentUser.picture}/>
+            <BubbleImage src={"./assets/images/" + this.state.currentUser.picture}/>
           </div>
         </div>
       </div>
