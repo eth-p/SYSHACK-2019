@@ -15,10 +15,17 @@ class InputBox extends Component {
     this.handleTextBoxChange = this.handleTextBoxChange.bind(this);
     this.onMessageSend = this.onMessageSend.bind(this);
     this.handleEmojiButtonClick = this.handleEmojiButtonClick.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   handleTextBoxChange(event) {
     this.setState({textBoxText: event.target.value});
+  }
+
+  handleKeyDown(event) {
+    if (event.keyCode === 13) {
+      this.onMessageSend();
+    }
   }
 
   handleEmojiButtonClick(event) {
@@ -43,6 +50,7 @@ class InputBox extends Component {
             className="TextBox"
             type="text"
             onChange={this.handleTextBoxChange}
+            onKeyDown={this.handleKeyDown}
             value={this.state.textBoxText}
           />
           <div className="SendButtonArea">
