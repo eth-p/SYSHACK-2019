@@ -72,6 +72,8 @@ class Server {
 
     socket.on('chat nudge', () => {
       socket.broadcast.emit('chat nudge', {});
+      socket.emit('chat status', {message: 'You sent a nudge!'});
+      socket.broadcast.emit('chat status', {message: `${user.name} nudged you!`});
     });
 
     socket.broadcast.emit('join', userPublic);
