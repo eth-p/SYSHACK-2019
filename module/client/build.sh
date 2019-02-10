@@ -2,3 +2,4 @@
 cd reactapp
 npm install
 npm run build
+cp -R "public/assets" "dist"
