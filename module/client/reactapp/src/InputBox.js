@@ -56,6 +56,7 @@ class InputBox extends Component {
           />
           <div className="SendButtonArea">
             <input
+              disabled={this.state.textBoxText.length < 1}
               className="SendButton"
               type="button"
               value="Send"

@@ -11,6 +11,7 @@ class App extends Component {
     this.state = {
       messages: [],
       currentUser: {},
+      lastSentUser: null,
       nudge: false
     }
 
@@ -21,6 +22,7 @@ class App extends Component {
       const username = message.user;
 
       this.setState(prevState => ({
+        lastSentUser: message.user,
         messages: [...prevState.messages, {username: username, message: messageText, type: 'message'}]
       }));
     });
@@ -86,8 +88,14 @@ class App extends Component {
             <InputBox socket={this.socket}/>
           </div>
           <div className="UserColumn">
-            <BubbleImage src="https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"/>
-            <BubbleImage src={"./assets/images/" + this.state.currentUser.picture}/>
+            <BubbleImage
+              text={this.state.lastSentUser != null ? "Last message from: " + this.state.lastSentUser.user : "" }
+              src={this.state.lastSentUser != null ? ("./assets/images/" + this.state.lastSentUser.picture) : "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/49345126_2394988807230891_5503160343897047040_n.jpg?_nc_cat=102&_nc_ht=scontent-sea1-1.xx&oh=f64ccd0d1b10a28cb10645904c9f3ce0&oe=5CFBB50E"}
+            />
+            <BubbleImage
+              text={"You: " + this.state.currentUser.user}
+              src={"./assets/images/" + this.state.currentUser.picture}
+            />
           </div>
         </div>
       </div>
