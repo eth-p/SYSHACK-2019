@@ -47,10 +47,16 @@ class Server {
     });
 
     socket.on('chat message', (message: string) => {
-      console.log("RECV FROM " + user.username + " :: " + message);
+      let fixed = message.trim();
+      if (fixed.length === 0) return;
+
+      if (fixed.length > 1000) {
+        this.server.sockets.emit('chat error', {message: "No copypasta, please."});
+        return;
+      }
 
       if (/(?:a\/?s\/?l)/i.test(message)) {
-        this.server.sockets.emit('chat error', {message: "No."});
+        this.server.sockets.emit('chat error', {message: "No. Just no."});
         return;
       }
 
@@ -59,6 +65,7 @@ class Server {
         return;
       }
 
+      console.log("RECV FROM " + user.username + " :: " + message);
       this.server.sockets.emit('chat message', {message: CURSING.clean(message), user: userPublic});
     });
 
