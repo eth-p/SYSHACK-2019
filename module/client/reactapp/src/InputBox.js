@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './InputBox.css';
-import emoji from '../public/assets/emoticons/regular_smile.png';
+import emoji from '../public/assets/emoticons/confused_smile.png';
 
 class InputBox extends Component {
   constructor(props) {
