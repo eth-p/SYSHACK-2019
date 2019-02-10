@@ -16,6 +16,11 @@
 	margin-left: 0;
 }
 
+.ChatLog .ChatMessage.StatusMessage .Message {
+	color: grey;
+	margin-left: 0;
+}
+
 .ChatLog .ChatMessage {
     margin-top: 5px;
     display: flex;

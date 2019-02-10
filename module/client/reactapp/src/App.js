@@ -43,6 +43,15 @@ class App extends Component {
       }));
     });
 
+    this.socket.on("chat status", message => {
+      const messageText = message.message;
+      const username = message.user;
+
+      this.setState(prevState => ({
+        messages: [...prevState.messages, {username: "SERVER", message: messageText, type: 'status'}]
+      }));
+    });
+
     /*document.addEventListener('keypress', (e) => {
       if(e.key == "n") {
         this.nudge();
