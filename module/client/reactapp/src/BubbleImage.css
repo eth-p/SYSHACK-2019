@@ -14,6 +14,10 @@
     margin: 5px;
 }
 
+.bubble p {
+    max-width: 100px;
+}
+
 .BubbleContainer img {
     height: 95%;
     width: 95%;
