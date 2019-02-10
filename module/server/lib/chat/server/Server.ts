@@ -41,8 +41,8 @@ class Server {
       this.users.delete(username);
     });
 
-    socket.on('message', (message) => {
-      socket.broadcast.emit('message', message, userPublic);
+    socket.on('chat message', (message) => {
+      socket.broadcast.emit('message', {message: message, user: userPublic});
     });
 
     socket.broadcast.emit('join', userPublic);
