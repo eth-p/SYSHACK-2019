@@ -4,12 +4,16 @@
     border: 1px solid #bcbcbc;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     margin: 15px;
 }
 
 .InputBox .AddonBar {
     height: 40px;
     background-image: linear-gradient(#e5efff, #d5dae2, #e5efff);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
 }
 
 .InputBox .InputArea {

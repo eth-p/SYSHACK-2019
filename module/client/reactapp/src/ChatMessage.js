@@ -5,7 +5,7 @@ class ChatMessage extends Component {
     const message = this.props.message;
     return (
       <div className="ChatMessage">
-        <p className="SenderName">{message.username} says:</p>
+        <p className="SenderName">{message.username.user} says:</p>
         <p className="Message">{message.message}</p>
       </div>
     );
