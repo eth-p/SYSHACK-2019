@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+// Copyright (C) 2019 | https://github.com/eth-p/SYSHACK-2019/
+// ---------------------------------------------------------------------------------------------------------------------
+require('module-alias/register');
+
+const app = require('express')();
+const http = require('http').Server(app);
+const fs = require('fs');
+const io = require('socket.io')(http);
+const server = new (require('@chat/server/Server').Server)(io);
+
+const SOCKET = process.env['PORT'] == null ? '/tmp/hackathon.sock' : parseInt(process.env['PORT']);
+// ---------------------------------------------------------------------------------------------------------------------
+
+app.get('/', function(req, res){
+	res.redirect("https://github.com/eth-p/SYSHACK-2019/");
+});
+
+app.get('/test', function(req, res){
+	res.end("You're here, yes.");
+});
+
+http.listen(SOCKET, function(){
+	if ((typeof SOCKET) === 'string') fs.chmodSync(SOCKET, '777');
+	console.log('Listening.');
+});

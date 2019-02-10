@@ -19,7 +19,6 @@
   ],
   "include": [
     "bin/*",
-    "src/**/*.ts",
-    "routes/**/*.ts"
+    "lib/**/*.ts"
   ]
 }
