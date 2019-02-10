@@ -1,6 +1,6 @@
 // Copyright (C) 2019 | https://github.com/eth-p/SYSHACK-2019/
 // ---------------------------------------------------------------------------------------------------------------------
-import {rehydrate, dehydrate} from '@util/hydration';
+import {rehydrate, dehydrate} from '@util/Hydration';
 import JSON from "@util/JSON";
 
 import Action from "@chat/Action";
