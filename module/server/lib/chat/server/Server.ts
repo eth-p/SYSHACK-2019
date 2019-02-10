@@ -3,7 +3,12 @@
 import "@chat/register";
 import UserInstance from "@chat/server/UserInstance";
 
+import Filter = require('bad-words');
 import SocketIO = require("socket.io");
+
+const CURSING = new Filter({
+  placeHolder: '*'
+});
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Server:
@@ -41,13 +46,28 @@ class Server {
       this.users.delete(username);
     });
 
-    socket.on('chat message', (message) => {
+    socket.on('chat message', (message: string) => {
       console.log("RECV FROM " + user.username + " :: " + message);
-      this.server.sockets.emit('chat message', {message: message, user: userPublic});
+
+      if (/(?:a\/?s\/?l)/i.test(message)) {
+        this.server.sockets.emit('chat error', {message: "No."});
+        return;
+      }
+
+      if (/<\/? *[a-z\-]+ *>/i.test(message)) {
+        this.server.sockets.emit('chat error', {message: "Nice try."});
+        return;
+      }
+
+      this.server.sockets.emit('chat message', {message: CURSING.clean(message), user: userPublic});
+    });
+
+    socket.on('chat nudge', () => {
+      socket.broadcast.emit('chat nudge', {});
     });
 
     socket.broadcast.emit('join', userPublic);
-    socket.send('info', userPublic);
+    socket.emit('info', userPublic);
   }
 
 }
