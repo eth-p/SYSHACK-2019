@@ -10,7 +10,8 @@ class App extends Component {
     super();
     this.state = {
       messages: [],
-      currentUser: {}
+      currentUser: {},
+      nudge: false
     }
 
     this.socket = io("api.1337.tf.vc");
@@ -29,6 +30,24 @@ class App extends Component {
       this.setState({currentUser: userData});
     });
 
+    this.socket.on("chat nudge", () => {
+      alert("nudge");
+    });
+
+    this.socket.on("chat error", message => {
+      const messageText = message.message;
+      const username = message.user;
+
+      this.setState(prevState => ({
+        messages: [...prevState.messages, {username: "bad person", message: messageText}]
+      }));
+    });
+
+    document.addEventListener('keypress', (e) => {
+      if(e.key == "n") {
+        this.nudge();
+      }
+    });
 
     /*
     setInterval(() => {
@@ -39,9 +58,16 @@ class App extends Component {
     */
   }
 
+  nudge() {
+    this.setState({nudge: true});
+    setTimeout(() => {
+      this.setState({nudge: false});
+    }, 250);
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className={"App " + (this.state.nudge ? "shaking" : "")}>
         <div className="TopBar">
           msfriends
         </div>
